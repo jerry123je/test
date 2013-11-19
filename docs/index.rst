@@ -24,64 +24,76 @@ TriAquae安装
 TriAquae所依赖的环境
 ====================
 
-1. TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12
-2. Python     	==> 2.6
-3. python-pip  ==> 1.1
-4. Httpd       ==> 2.2
-5. MySQL     ==> 5.0
-6. SNMP       ==> 5.4
-7. Django     ==> 1.5
-8. Rrdtool     ==> 1.47
-9. Shellinabox ==> 2.10
-10. paramiko   ==> 1.10.1
-11. sysstat
-12. MySQLdb
-13. django_admin_bootstrapped.admin.models
+::
+   
+   :linenos:
+   1. TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12
+   2. Python     	==> 2.6
+   3. python-pip  ==> 1.1
+   4. Httpd       ==> 2.2
+   5. MySQL     ==> 5.0
+   6. SNMP       ==> 5.4
+   7. Django     ==> 1.5
+   8. Rrdtool     ==> 1.47
+   9. Shellinabox ==> 2.10
+   10. paramiko   ==> 1.10.1
+   11. sysstat
+   12. MySQLdb
+   13. django_admin_bootstrapped.admin.models
 
-不用担心，TriAquae已经帮您解决了，您可以通过一键安装配置以上环境,Oh yeah!
 
 获取TriAquae
 ====================
 
 ::
 
-	# wget http://118.244.168.45:8082/TriAquae.tar.gz	
+	# wget http://118.244.168.45:8082/TriAquae_beta.3.0.x86_64.tar.gz	
 
 安装TriAquae
 ====================
 
 
-2.3.1. 只需三步安装TriAquae
+2.3.1. 安装依赖环境
+---------------------------
+
+.. code-block:: bash 
+
+	yum install gcc gcc-c++ make sysstat -y
+	yum install python-devel -y
+	yum install net-snmp net-snmp-utils net-snmp-devel -y
+	yum install mysql mysql-server mysql-devel -y
+	/etc/init.d/mysqld start
+	
+安装rrdtool
+
+.. code-block:: bash
+
+	yum install libart_lgpl libart_lgpl-devel -y
+	yum install rrdtool rrdtool-devel -y
+
+
+2.3.2.	升级 python 到2.6以上
+------------------------------
+
+::
+
+	python -V
+	sh install/python_ins.sh
+	python -V
+	说明：5.x系统python默认版本是2.4。安装包中自带升级python 2.6的脚本,安装完成后在次查看python版本
+	
+
+2.3.3.	安装TriAquae 
 ---------------------------
 
 ::
 
-	# python setup.py -h
-	TriAquae安装步骤非常简单，只需要三步就能使用TriAquae轻松管理数千台服务器
-	.build --prefix=	指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。检测TriAquae安装的系统环境，如果有不满足要求，TriAquae会帮您自动安装这些pythone和django所需的环境，当然这是在你允许的情况下。
-	.install		安装TriAquae到您指定的目录中
+	tar zxf TriAquae.tar.gz
+	cd TriAquae/install
+	python setup.py build --prefix=	指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。检测TriAquae安装的系统环境，如果有不满足要求，TriAquae会帮您自动安装这些pythone和django所需的环境，当然这是在你允许的情况下。
+	python setup.py install		安装TriAquae到您指定的目录中
+	
 	.init		初始化TriAquae相关操作
-
-2.3.2. 检测系统环境
----------------------------
-
-因为TriAquae 会自行为你安装httpd, 所以安装前请务必卸载机器上已有的httpd 
-
-::
-
-	yum remove httpd –y && rm –rf /etc/httpd
-
-	# tar zxf TriAquae.tar.gz
-	# cd TriAquae/install
-	# python setup.py build --prefix=/usr/local/TriAquae
-	自动检测系统环境，并显示出环境不符合要求的信息。这是一台新的服务器系统，。选择"y"一键解决以上问题（我们建议您所有的TriAquae依赖包都通过一键安装方式部署，尽量不要自行手动安装）。一键安装时，保证服务器能够正常上网及YUM正常使用,并使用root用户安装此软件。经过漫长的安装等待，直到所有环境都OK，提示运行'python setup.py install'
-
-
-2.3.3. 安装
----------------------------
-::
-
-	# python setup.py install
 
 2.3.4. 配置TriAquae
 ---------------------------
@@ -96,12 +108,17 @@ TriAquae所依赖的环境
 配置数据库信息
 编辑当前目录下的tri_config.py配置文件，填写数据库连接信息。TriAquae初始化之前会将必要的信息写入到数据库中，必须在初始化之前配置好数据库和本机IP地址。
 
-::
+.. code:: bash
 
 		#TriAquae database info
 		MySQL_Name = 'TriAquae'   # don’t change this one
 		MySQL_User = 'root'    #input your own database username
-		MySQL_Pass = 'triaquae' #input your own database password
+		MySQL_Pass = 'coral' #input your own database password
+
+.. note::
+	
+   修改数据库名称目前不支持,使用默认的
+	
 
 配置IP地址
 
@@ -109,7 +126,15 @@ TriAquae所依赖的环境
 
 	Tri_IP = '10.0.0.171' # your TriAquae server’s IP address
 
-注意：修改数据库名称目前不支持,使用默认的
+
+配置报警接受邮件
+
+::
+	
+	SMTP_server = 'smtp.company.com' #replace it to your company smtp server
+	Mail_username = 'tri_mailuser'
+	Mail_password = 'Motherfucker!23'
+
 
 2.3.5. 初始化
 ---------------------------
@@ -127,13 +152,18 @@ TriAquae所依赖的环境
 
 	# cd "Your installation directory"
 	# python TriAquae/sbin/tri_service.py start
-	# /etc/init.d/httpd restart 
+
 
 2.3.7. 登录TriAquae
 ---------------------------
 
-http://localhost/
-默认初始账户：admin	;密码：triaquae
+http://<Your ip>:7000/
+
+默认初始账户：admin	;	密码：triaquae
+
+.. tip::
+	
+	注意关闭 iptables
 
 
 配置
