@@ -61,21 +61,35 @@ TriAquae安装</p>
 </div>
 <div class="section" id="id1">
 <h1>TriAquae所依赖的环境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-python"><pre>:linenos:
-1. TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12
-2. Python            ==&gt; 2.6
-3. python-pip  ==&gt; 1.1
-4. Httpd       ==&gt; 2.2
-5. MySQL     ==&gt; 5.0
-6. SNMP       ==&gt; 5.4
-7. Django     ==&gt; 1.5
-8. Rrdtool     ==&gt; 1.47
-9. Shellinabox ==&gt; 2.10
-10. paramiko   ==&gt; 1.10.1
-11. sysstat
-12. MySQLdb
-13. django_admin_bootstrapped.admin.models</pre>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12</p>
 </div>
+<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">Python</span>       <span class="o">==</span>&gt; 2.6
+python-pip  <span class="o">==</span>&gt; 1.1
+<span class="nv">Httpd</span>       <span class="o">==</span>&gt; 2.2
+<span class="nv">MySQL</span>     <span class="o">==</span>&gt; 5.0
+<span class="nv">SNMP</span>       <span class="o">==</span>&gt; 5.4
+<span class="nv">Django</span>     <span class="o">==</span>&gt; 1.5
+<span class="nv">Rrdtool</span>     <span class="o">==</span>&gt; 1.47
+<span class="nv">Shellinabox</span> <span class="o">==</span>&gt; 2.10
+<span class="nv">Paramiko</span>   <span class="o">==</span>&gt; 1.10.1
+sysstat
+MySQLdb
+django_admin_bootstrapped.admin.models
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="id2">
 <h1>获取TriAquae<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
@@ -163,8 +177,13 @@ mysql&gt; quit;</pre>
 </div>
 <div class="section" id="id9">
 <h2>2.3.7. 登录TriAquae<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http:/">http:/</a>/&lt;Your ip&gt;:7000/</p>
-<p>默认初始账户：admin    ;       密码：triaquae</p>
+<div class="highlight-python"><pre>http://&lt;Your ip&gt;:7000/</pre>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">默认初始账户：admin
+密码：triaquae</p>
+</div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">注意关闭 iptables</p>

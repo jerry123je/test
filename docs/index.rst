@@ -21,25 +21,29 @@ TriAquae是Python语言 + Django Web框架编写的开源的服务器运维管�
 快速安装
 TriAquae安装
 
+
 TriAquae所依赖的环境
 ====================
 
-::
-   
+.. hint::
+
+   TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12
+
+.. code-block:: bash
    :linenos:
-   1. TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12
-   2. Python     	==> 2.6
-   3. python-pip  ==> 1.1
-   4. Httpd       ==> 2.2
-   5. MySQL     ==> 5.0
-   6. SNMP       ==> 5.4
-   7. Django     ==> 1.5
-   8. Rrdtool     ==> 1.47
-   9. Shellinabox ==> 2.10
-   10. paramiko   ==> 1.10.1
-   11. sysstat
-   12. MySQLdb
-   13. django_admin_bootstrapped.admin.models
+   
+   Python     	==> 2.6
+   python-pip  ==> 1.1
+   Httpd       ==> 2.2
+   MySQL     ==> 5.0
+   SNMP       ==> 5.4
+   Django     ==> 1.5
+   Rrdtool     ==> 1.47
+   Shellinabox ==> 2.10
+   Paramiko   ==> 1.10.1
+   sysstat
+   MySQLdb
+   django_admin_bootstrapped.admin.models
 
 
 获取TriAquae
@@ -48,6 +52,7 @@ TriAquae所依赖的环境
 ::
 
 	# wget http://118.244.168.45:8082/TriAquae_beta.3.0.x86_64.tar.gz	
+
 
 安装TriAquae
 ====================
@@ -94,6 +99,7 @@ TriAquae所依赖的环境
 	python setup.py install		安装TriAquae到您指定的目录中
 	
 	.init		初始化TriAquae相关操作
+
 
 2.3.4. 配置TriAquae
 ---------------------------
@@ -157,9 +163,15 @@ TriAquae所依赖的环境
 2.3.7. 登录TriAquae
 ---------------------------
 
-http://<Your ip>:7000/
 
-默认初始账户：admin	;	密码：triaquae
+::
+
+	http://<Your ip>:7000/
+
+.. hint::
+
+	默认初始账户：admin	
+	密码：triaquae
 
 .. tip::
 	
@@ -168,7 +180,6 @@ http://<Your ip>:7000/
 
 配置
 ---------------------------
-
 
 .. toctree::
    :maxdepth: 3
