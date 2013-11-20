@@ -192,6 +192,7 @@ TriAquae所依赖的环境
 .. toctree::
    :maxdepth: 3
 
+   0.   安装及基本配置 <index>
    1.	启动服务 <startservice>
    2.	添加主机 <addhost>
    3.	添加用户 <adduser>
