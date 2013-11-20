@@ -1,5 +1,5 @@
 Start TriAquae service
-=====================
+========================
 
 Locate to your TriAquae install path
 
@@ -13,7 +13,7 @@ Start the service by simplely run below command
 
 	python tri_service.py start
 
-Valid output
+关闭及启动服务
 ----------------------
 
   .. image:: images/start_service.png

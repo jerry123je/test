@@ -10,16 +10,19 @@ TriAquae 使用文档
 
 TriAquae是Python语言 + Django Web框架编写的开源的服务器运维管理软件, 您可以借助TriAquae轻松实现对上万台服务器的统一管理，如批量命令执行、文件分发、主机状态监控、资产信息自动管理、运维操作审计等功能。
 
+
+.. contents:: :depth: 3  
+  
 功能介绍
-主机管理
-批量命令执行
-批量文件传送
-主机监控
-主机状态监控
-资产管理
-主机资产自动管理
-快速安装
-TriAquae安装
+  主机管理
+  批量命令执行
+  批量文件传送
+  主机监控
+  主机状态监控
+  资产管理
+  主机资产自动管理
+  快速安装
+  TriAquae安装
 
 
 TriAquae所依赖的环境
@@ -77,7 +80,7 @@ TriAquae所依赖的环境
 	yum install rrdtool rrdtool-devel -y
 
 
-2.3.2.	升级 python 到2.6以上
+2.3.2.	升级 python 到2.75以上
 ------------------------------
 
 ::
@@ -85,7 +88,7 @@ TriAquae所依赖的环境
 	python -V
 	sh install/python_ins.sh
 	python -V
-	说明：5.x系统python默认版本是2.4。安装包中自带升级python 2.6的脚本,安装完成后在次查看python版本
+	说明：5.x系统python默认版本是2.4。安装包中自带升级python 2.75的脚本,安装完成后在次查看python版本
 	
 
 2.3.3.	安装TriAquae 
@@ -95,10 +98,15 @@ TriAquae所依赖的环境
 
 	tar zxf TriAquae.tar.gz
 	cd TriAquae/install
-	python setup.py build --prefix=	指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。检测TriAquae安装的系统环境，如果有不满足要求，TriAquae会帮您自动安装这些pythone和django所需的环境，当然这是在你允许的情况下。
+	python setup.py build --prefix=	指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。
 	python setup.py install		安装TriAquae到您指定的目录中
 	
 	.init		初始化TriAquae相关操作
+
+
+.. note::
+	
+	安装程序会检测TriAquae安装的系统环境，如果有不满足要求，TriAquae会帮您自动安装这些pythone和django所需的环境，当然这是在您允许的情况下。
 
 
 2.3.4. 配置TriAquae
