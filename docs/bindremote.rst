@@ -4,7 +4,7 @@
 在TriAquae administration中,点击"Remote Users".
 
 .. image:: images/add_remoteuser_01.png
-	   :scale: 60 %
+	   :scale: 80 %
  
 .. note::
 
