@@ -54,8 +54,11 @@ TriAquae所依赖的环境
 
 ::
 
-	# wget http://118.244.168.45:8082/TriAquae_beta.3.0.x86_64.tar.gz	
+	# wget http://118.244.168.45:8082/TriAquae_beta.3.1.x86_64.tar.gz	
 
+.. note::
+	
+	目前 TriAquae 版本更新很快,如果想下载最新版本的程序,请直接访问 http://118.244.168.45:8082 , 复制连接,并下载.	
 
 安装TriAquae
 ====================
