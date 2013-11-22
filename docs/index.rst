@@ -124,7 +124,7 @@ TriAquae所依赖的环境
 
 TriAquae初始化之前会将必要的信息写入到数据库中，必须在初始化之前配置好数据库和本机IP地址。
 
-.. code:: bash
+::
 	
    #TriAquae database info
    MySQL_Name = 'TriAquae'   # Don't change this database name
