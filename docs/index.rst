@@ -107,7 +107,7 @@ TriAquae所依赖的环境
 	.init		初始化TriAquae相关操作
 
 
-   .. image:: images/startservice_01.jpg
+.. image:: images/startservice_01.jpg
 
 
 .. note::

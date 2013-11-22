@@ -48,5 +48,13 @@ Add a new host
 批量添加主机
 -------------------
 
+TriAquae 允许你批量添加主机, 使用方法很简单.
+
+在TriAquae Administration 界面的上方可以看到三个按钮, 这里我们来介绍"Batch Add Servers"
+
+点击这个按钮, 弹出添加界面, 用法很简单,只需要按照样例,在下方写入客户机的基本信息, 每条记录一行
+
+  .. image:: images/batchadd_ip_01.png
+	     :scale: 80 %
 
 

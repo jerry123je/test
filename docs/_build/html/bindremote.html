@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="jerry_doc 1.0 documentation" href="index.html" />
-    <link rel="next" title="This is a Title" href="confighost.html" />
+    <link rel="next" title="配置主机" href="confighost.html" />
     <link rel="prev" title="添加用户" href="adduser.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="confighost.html" title="This is a Title"
+          <a href="confighost.html" title="配置主机"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="adduser.html" title="添加用户"
@@ -51,6 +51,8 @@
             
   <div class="section" id="id1">
 <h1>绑定远程用户<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>添加远程用户<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>在TriAquae administration中,点击&#8221;Remote Users&#8221;.</p>
 <a class="reference internal image-reference" href="_images/add_remoteuser_01.png"><img alt="_images/add_remoteuser_01.png" src="_images/add_remoteuser_01.png" style="width: 647.2px; height: 302.4px;" /></a>
 <div class="admonition note">
@@ -66,6 +68,33 @@
 </ul>
 </div>
 </div>
+<div class="section" id="id3">
+<h2>批量添加远程用户<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>在一个成熟的系统环境中,在系统中我们会针对不同的服务或功能添加多个user.</p>
+<p>TriAquae 可以让你方面的把这些用户添加到系统中进行使用.</p>
+<p>在 TriAquae Administration 界面的上方我们可以找到 &#8220;Batch Add RemoteUsers&#8221;</p>
+<p>点击按钮填出添加界面,使用很方面,只需要按照样例在空行输入要添加的用户信息,每条记录占用一行</p>
+<img alt="_images/batchadd_auth_01.png" src="_images/batchadd_auth_01.png" />
+</div>
+<div class="section" id="id4">
+<h2>设置远程用户的认证方式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>根据用户的安全认证设置不同,我们把它分为ssh-password 和ssh-key 两种,即密码认证和密钥认证</p>
+<p>TriAquae 在管理或执行命令时,需要通过远程用户连接到对端客户机.</p>
+<p>在TriAquae Administration 界面中点击&#8221;Auth by IP and Remote Users&#8221;</p>
+<a class="reference internal image-reference" href="_images/auth_remote_01.png"><img alt="_images/auth_remote_01.png" src="_images/auth_remote_01.png" style="width: 385.6px; height: 168.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">在此添加设置前,推荐您先在服务端和客户端测试通过,注意SELinux 等服务的影响</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>批量添加远程用户认证<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>TriAquae 允许用户批量添加远程用户的认证信息. 操作如下</p>
+<p>在 TriAquae Administration 界面的上方我们可以找到 &#8220;Batch Add Auth_IP_User Binding&#8221;</p>
+<p>点击按钮填出添加界面,使用很方面,只需要按照样例在空行输入要添加的用户信息,每条记录占用一行</p>
+<a class="reference internal image-reference" href="_images/batchadd_remoteuser_01.png"><img alt="_images/batchadd_remoteuser_01.png" src="_images/batchadd_remoteuser_01.png" style="width: 452.8px; height: 418.4px;" /></a>
+</div>
+</div>
 
 
           </div>
@@ -73,12 +102,23 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">绑定远程用户</a><ul>
+<li><a class="reference internal" href="#id2">添加远程用户</a></li>
+<li><a class="reference internal" href="#id3">批量添加远程用户</a></li>
+<li><a class="reference internal" href="#id4">设置远程用户的认证方式</a></li>
+<li><a class="reference internal" href="#id5">批量添加远程用户认证</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="adduser.html"
                         title="previous chapter">添加用户</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="confighost.html"
-                        title="next chapter">This is a Title</a></p>
+                        title="next chapter">配置主机</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/bindremote.txt"
@@ -108,7 +148,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="confighost.html" title="This is a Title"
+          <a href="confighost.html" title="配置主机"
              >next</a> |</li>
         <li class="right" >
           <a href="adduser.html" title="添加用户"
