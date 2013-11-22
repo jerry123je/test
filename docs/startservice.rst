@@ -13,13 +13,19 @@ Start the service by simplely run below command
 
 	python tri_service.py start
 
-关闭及启动服务
+启动服务
 ----------------------
 
-  .. image:: images/start_service.png
-
+  .. image:: images/startservice_01.jpg
+		
 	
-Comment
+查看状态
+----------------------
+
+
+
+
+关闭服务
 ----------------------
 
 
