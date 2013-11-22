@@ -24,10 +24,15 @@
 完成后,我们可以继续添加后续的信息
 
  
-  绑定用户组
+  绑定远程用户
 
   .. image:: images/add_user_002.png
    	     :scale: 80 %
+
+  .. hint::
+	
+	TriAquae 运行的命令需经由客户端的某个账户执行, 这个账户就是远程用户.
+	我们可以根据权限的限制,给 TriAquae 分配不同的远程用户
 
 
   设置用户属组
@@ -35,12 +40,18 @@
   .. image:: images/add_user_003.png
              :scale: 80 %
 
+  .. hint::
+
+	用户属组用于统一管理 TriAquae 用户
 
   绑定用户可管理的客户机
 
   .. image:: images/add_user_004.png
              :scale: 80 %
 
+  .. hint::
+	
+	此设置顾名思义,是给这个用户指定他可以管理的主机.
 
 完善账户信息
 -------------------
