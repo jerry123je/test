@@ -126,10 +126,12 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 
 .. code:: bash
 
-		#TriAquae database info
-		MySQL_Name = 'TriAquae'   # don’t change this one
-		MySQL_User = 'root'    #input your own database username
-		MySQL_Pass = 'coral' #input your own database password
+	#TriAquae database info
+	MySQL_Name = 'TriAquae'   # Don't change this database name
+	MySQL_Host = '127.0.0.1'  # Your Mysql hostname
+	MySQL_Port = '3306'       # Your Mysql port
+	MySQL_User = 'root'       # Your Mysql username
+	MySQL_Pass = '123'        # Your Mysql password, '' means no password.
 
 .. note::
 	
