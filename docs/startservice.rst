@@ -17,18 +17,15 @@ Start the service by simplely run below command
 ----------------------
 
   .. image:: images/service_start_01.png
-	     :scale: 80 %
 		
 	
 查看状态
 ----------------------
 
   .. image:: images/service_status_01.png
-             :scale: 80 %
 
 
 关闭服务
 ----------------------
 
   .. image:: images/service_stop_01.png
-             :scale: 80 %
