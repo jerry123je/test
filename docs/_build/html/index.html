@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="jerry_doc 1.0 documentation" href="#" />
-    <link rel="next" title="TriAquae 使用文档" href="" /> 
+    <link rel="next" title="Start TriAquae service" href="startservice.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,7 +34,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="#" title="TriAquae 使用文档"
+          <a href="startservice.html" title="Start TriAquae service"
              accesskey="N">next</a> |</li>
         <li><a href="#">jerry_doc 1.0 documentation</a> &raquo;</li> 
       </ul>
@@ -46,23 +46,26 @@
           <div class="body">
             
   <div class="section" id="triaquae">
-<h1><a class="toc-backref" href="#id11">TriAquae 使用文档</a><a class="headerlink" href="#triaquae" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id12">TriAquae 使用文档</a><a class="headerlink" href="#triaquae" title="Permalink to this headline">¶</a></h1>
 <p>TriAquae是Python语言 + Django Web框架编写的开源的服务器运维管理软件, 您可以借助TriAquae轻松实现对上万台服务器的统一管理，如批量命令执行、文件分发、主机状态监控、资产信息自动管理、运维操作审计等功能。</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#triaquae" id="id11">TriAquae 使用文档</a></li>
-<li><a class="reference internal" href="#id1" id="id12">TriAquae所依赖的环境</a></li>
-<li><a class="reference internal" href="#id2" id="id13">获取TriAquae</a></li>
-<li><a class="reference internal" href="#id3" id="id14">安装TriAquae</a><ul>
-<li><a class="reference internal" href="#id4" id="id15">2.3.1. 安装依赖环境</a></li>
-<li><a class="reference internal" href="#python-2-75" id="id16">2.3.2.  升级 python 到2.75以上</a></li>
-<li><a class="reference internal" href="#id5" id="id17">2.3.3.  安装TriAquae</a></li>
-<li><a class="reference internal" href="#id6" id="id18">2.3.4. 配置TriAquae</a></li>
-<li><a class="reference internal" href="#id7" id="id19">2.3.5. 初始化</a></li>
-<li><a class="reference internal" href="#id8" id="id20">2.3.6. 启动TriAquae</a></li>
-<li><a class="reference internal" href="#id9" id="id21">2.3.7. 登录TriAquae</a></li>
-<li><a class="reference internal" href="#id10" id="id22">配置</a></li>
+<li><a class="reference internal" href="#triaquae" id="id12">TriAquae 使用文档</a></li>
+<li><a class="reference internal" href="#id1" id="id13">安装前准备</a><ul>
+<li><a class="reference internal" href="#id2" id="id14">TriAquae所依赖的环境</a></li>
+<li><a class="reference internal" href="#id3" id="id15">获取TriAquae</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4" id="id16">安装TriAquae</a><ul>
+<li><a class="reference internal" href="#id5" id="id17">2.3.1. 安装依赖环境</a></li>
+<li><a class="reference internal" href="#python-2-75" id="id18">2.3.2.  升级 python 到2.75以上</a></li>
+<li><a class="reference internal" href="#id6" id="id19">2.3.3.  安装TriAquae</a></li>
+<li><a class="reference internal" href="#id7" id="id20">2.3.4. 配置TriAquae</a></li>
+<li><a class="reference internal" href="#id8" id="id21">2.3.5. 初始化</a></li>
+<li><a class="reference internal" href="#id9" id="id22">2.3.6. 启动TriAquae</a></li>
+<li><a class="reference internal" href="#id10" id="id23">2.3.7. 登录TriAquae</a></li>
+<li><a class="reference internal" href="#id11" id="id24">配置</a></li>
 </ul>
 </li>
 </ul>
@@ -81,7 +84,9 @@ TriAquae安装</dd>
 </dl>
 </div>
 <div class="section" id="id1">
-<h1><a class="toc-backref" href="#id12">TriAquae所依赖的环境</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id13">安装前准备</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id14">TriAquae所依赖的环境</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
 <p class="last">TriAquae支持Centos5.x 、RedHat5.x及Ubuntu 12</p>
@@ -112,8 +117,8 @@ django_admin_bootstrapped.admin.models
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="section" id="id2">
-<h1><a class="toc-backref" href="#id13">获取TriAquae</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id15">获取TriAquae</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># wget http://118.244.168.45:8082/TriAquae_beta.3.1.x86_64.tar.gz</span>
 </pre></div>
 </div>
@@ -122,10 +127,11 @@ django_admin_bootstrapped.admin.models
 <p class="last">目前 TriAquae 版本更新很快,如果想下载最新版本的程序,请直接访问 <a class="reference external" href="http://118.244.168.45:8082">http://118.244.168.45:8082</a> , 复制连接,并下载.</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h1><a class="toc-backref" href="#id14">安装TriAquae</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+</div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id15">2.3.1. 安装依赖环境</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h1><a class="toc-backref" href="#id16">安装TriAquae</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id17">2.3.1. 安装依赖环境</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre>yum install gcc gcc-c++ make sysstat -y
 yum install python-devel -y
 yum install net-snmp net-snmp-utils net-snmp-devel -y
@@ -140,15 +146,15 @@ yum install rrdtool rrdtool-devel -y
 </div>
 </div>
 <div class="section" id="python-2-75">
-<h2><a class="toc-backref" href="#id16">2.3.2.  升级 python 到2.75以上</a><a class="headerlink" href="#python-2-75" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">2.3.2.  升级 python 到2.75以上</a><a class="headerlink" href="#python-2-75" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><pre>python -V
 sh install/python_ins.sh
 python -V
 说明：5.x系统python默认版本是2.4。安装包中自带升级python 2.75的脚本,安装完成后在次查看python版本</pre>
 </div>
 </div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#id17">2.3.3.  安装TriAquae</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id19">2.3.3.  安装TriAquae</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><pre>tar zxf TriAquae.tar.gz
 cd TriAquae/install
 python setup.py build --prefix= 指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。
@@ -162,8 +168,8 @@ python setup.py install         安装TriAquae到您指定的目录中
 <p class="last">安装程序会检测TriAquae安装的系统环境，如果有不满足要求，TriAquae会帮您自动安装这些pythone和django所需的环境，当然这是在您允许的情况下。</p>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#id18">2.3.4. 配置TriAquae</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id20">2.3.4. 配置TriAquae</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>配置数据库信息</p>
 <p>编辑当前目录下的tri_config.py配置文件，填写数据库连接信息。</p>
 <p>TriAquae初始化之前会将必要的信息写入到数据库中，必须在初始化之前配置好数据库和本机IP地址。</p>
@@ -190,22 +196,22 @@ python setup.py install         安装TriAquae到您指定的目录中
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#id19">2.3.5. 初始化</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id21">2.3.5. 初始化</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># python setup.py init</span>
 </pre></div>
 </div>
 <p>初始化操作会创建tri_connector用户，导入TriAquae数据库等操作</p>
 </div>
-<div class="section" id="id8">
-<h2><a class="toc-backref" href="#id20">2.3.6. 启动TriAquae</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id22">2.3.6. 启动TriAquae</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># cd &quot;Your installation directory&quot;</span>
 <span class="c"># python TriAquae/sbin/tri_service.py start</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id9">
-<h2><a class="toc-backref" href="#id21">2.3.7. 登录TriAquae</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="#id23">2.3.7. 登录TriAquae</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><pre>http://&lt;Your ip&gt;:7000/</pre>
 </div>
 <div class="admonition hint">
@@ -218,34 +224,11 @@ python setup.py install         安装TriAquae到您指定的目录中
 <p class="last">注意关闭 iptables</p>
 </div>
 </div>
-<div class="section" id="id10">
-<h2><a class="toc-backref" href="#id22">配置</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id24">配置</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">TriAquae 使用文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id1">TriAquae所依赖的环境</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id2">获取TriAquae</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id3">安装TriAquae</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id4">2.3.1. 安装依赖环境</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-2-75">2.3.2.  升级 python 到2.75以上</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">2.3.3.  安装TriAquae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">2.3.4. 配置TriAquae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">2.3.5. 初始化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">2.3.6. 启动TriAquae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">2.3.7. 登录TriAquae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">配置</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="startservice.html">1.   启动服务</a></li>
-<li class="toctree-l3"><a class="reference internal" href="addhost.html">2.   添加主机</a></li>
-<li class="toctree-l3"><a class="reference internal" href="adduser.html">3.   添加用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bindremote.html">4.   绑定远程用户与主机</a></li>
-<li class="toctree-l3"><a class="reference internal" href="confighost.html">5.   配置主机</a></li>
-<li class="toctree-l3"><a class="reference internal" href="snmpmonit.html">6.   配置SNMP监控</a></li>
-<li class="toctree-l3"><a class="reference internal" href="alert.html">7.   配置报警</a></li>
-<li class="toctree-l3"><a class="reference internal" href="autoasset.html">8.   启动自动资产管理</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="startservice.html">1.   启动服务</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="startservice.html#id1">启动服务</a></li>
 <li class="toctree-l2"><a class="reference internal" href="startservice.html#id2">查看状态</a></li>
@@ -294,17 +277,20 @@ python setup.py install         安装TriAquae到您指定的目录中
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">TriAquae 使用文档</a></li>
-<li><a class="reference internal" href="#id1">TriAquae所依赖的环境</a></li>
-<li><a class="reference internal" href="#id2">获取TriAquae</a></li>
-<li><a class="reference internal" href="#id3">安装TriAquae</a><ul>
-<li><a class="reference internal" href="#id4">2.3.1. 安装依赖环境</a></li>
+<li><a class="reference internal" href="#id1">安装前准备</a><ul>
+<li><a class="reference internal" href="#id2">TriAquae所依赖的环境</a></li>
+<li><a class="reference internal" href="#id3">获取TriAquae</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">安装TriAquae</a><ul>
+<li><a class="reference internal" href="#id5">2.3.1. 安装依赖环境</a></li>
 <li><a class="reference internal" href="#python-2-75">2.3.2.  升级 python 到2.75以上</a></li>
-<li><a class="reference internal" href="#id5">2.3.3.  安装TriAquae</a></li>
-<li><a class="reference internal" href="#id6">2.3.4. 配置TriAquae</a></li>
-<li><a class="reference internal" href="#id7">2.3.5. 初始化</a></li>
-<li><a class="reference internal" href="#id8">2.3.6. 启动TriAquae</a></li>
-<li><a class="reference internal" href="#id9">2.3.7. 登录TriAquae</a></li>
-<li><a class="reference internal" href="#id10">配置</a><ul>
+<li><a class="reference internal" href="#id6">2.3.3.  安装TriAquae</a></li>
+<li><a class="reference internal" href="#id7">2.3.4. 配置TriAquae</a></li>
+<li><a class="reference internal" href="#id8">2.3.5. 初始化</a></li>
+<li><a class="reference internal" href="#id9">2.3.6. 启动TriAquae</a></li>
+<li><a class="reference internal" href="#id10">2.3.7. 登录TriAquae</a></li>
+<li><a class="reference internal" href="#id11">配置</a><ul>
 </ul>
 </li>
 </ul>
@@ -312,8 +298,8 @@ python setup.py install         安装TriAquae到您指定的目录中
 </ul>
 
   <h4>Next topic</h4>
-  <p class="topless"><a href=""
-                        title="next chapter">TriAquae 使用文档</a></p>
+  <p class="topless"><a href="startservice.html"
+                        title="next chapter">Start TriAquae service</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
@@ -343,7 +329,7 @@ python setup.py install         安装TriAquae到您指定的目录中
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="#" title="TriAquae 使用文档"
+          <a href="startservice.html" title="Start TriAquae service"
              >next</a> |</li>
         <li><a href="#">jerry_doc 1.0 documentation</a> &raquo;</li> 
       </ul>
