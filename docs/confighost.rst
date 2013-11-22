@@ -1,28 +1,21 @@
-This is a Title
+配置主机
 =====================
 
-That has a paragraph about a main subject and is set when the '='
-is at least the same length of the title itself.
+我们可以在这里添加对主机的监控, 这里的监控特指与主机的连通性(通过Ping)
 
-Subject Subtitle
-----------------------
+请查看以下这个例子: 
 
-Subtitles are set with '-' and are required to have the same length 
-of the subtitle itself, just like titles.
 
-Lists can be unnumbered like:
+  .. image:: images/server_manage_02.png
+	     :scale: 80 %
 
- * Item Foo
- * Item Bar
 
-Or automatically numbered:
+添加主机监控
+-----------------
 
- #. Item 1
- #. Item 2
+在TriAquae Administration 中点击Server status
 
-Inline Markup
--------------------
+要添加对主机的监控只需填入host name 和 IP 地址.
 
-Words can have *emphasis in italics* or be **bold** and you can define
-code samples with back quotes, like when you talk about a command: ``sudo`` 
-gives you super user powers! 
+  .. image:: images/server_manage_01.png
+	     :scale: 80 %

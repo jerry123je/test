@@ -1,28 +1,29 @@
-This is a Title
+配置 SNMP 监控
 =====================
 
-That has a paragraph about a main subject and is set when the '='
-is at least the same length of the title itself.
+测试客户机 SNMP 认证
+---------------------
 
-Subject Subtitle
+  .. note::
+
+	推荐在配置 SNMP 时先在命令行测试通过. 执行监控的程序在 /安装目录/TriAquae/sbin/
+	
+	使用 -h 查看使用方法
+
+	.. image:: images/snmp_02.png
+		   :scale: 80 %
+
+	这里,如果您的客户机操作系统为CentOS, 推荐使用 SNMP V3, Ubuntu 可以使用 V2
+
+
+配置SNMP 监控
 ----------------------
 
-Subtitles are set with '-' and are required to have the same length 
-of the subtitle itself, just like titles.
+  我们可以在没台主机的配置界面下添加 SNMP 监控
 
-Lists can be unnumbered like:
+  使用我们在测试时通过的配置信息
 
- * Item Foo
- * Item Bar
+  .. image:: images/snmp_01.png
+	     :scale: 80 %
 
-Or automatically numbered:
-
- #. Item 1
- #. Item 2
-
-Inline Markup
--------------------
-
-Words can have *emphasis in italics* or be **bold** and you can define
-code samples with back quotes, like when you talk about a command: ``sudo`` 
-gives you super user powers! 
+	  
