@@ -1,28 +1,16 @@
-This is a Title
+配置报警
 =====================
 
-That has a paragraph about a main subject and is set when the '='
-is at least the same length of the title itself.
+我们需要在管理界面下的TriAquae Users 里添加报警的邮箱,在 ips 中对每台客户机设定报警的阀值
 
-Subject Subtitle
-----------------------
+  * 添加邮件地址
 
-Subtitles are set with '-' and are required to have the same length 
-of the subtitle itself, just like titles.
+  .. image:: images/alert_01.png
+	     :scale: 80 %
 
-Lists can be unnumbered like:
 
- * Item Foo
- * Item Bar
+  * 设置报警阀值
 
-Or automatically numbered:
-
- #. Item 1
- #. Item 2
-
-Inline Markup
--------------------
-
-Words can have *emphasis in italics* or be **bold** and you can define
-code samples with back quotes, like when you talk about a command: ``sudo`` 
-gives you super user powers! 
+  .. image:: images/snmp_03.png
+	     :scale: 80 %	
+  

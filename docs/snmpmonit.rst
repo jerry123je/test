@@ -23,7 +23,7 @@
 
   使用我们在测试时通过的配置信息
 
-  .. image:: images/snmp_01.png
+  .. image:: images/snmp_01.jpg
 	     :scale: 80 %
 
 	  
