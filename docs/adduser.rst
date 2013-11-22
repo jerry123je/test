@@ -11,7 +11,7 @@
 
 在TriAquae administartion 界面下点击 Users , 点击 "Add User" 按钮
 
-.. image:: images/adduser_01.png
+.. image:: images/add_user_01.png
 	   :scale: 80 %
 
 在此界面下,我们只需填入用户名及密码.

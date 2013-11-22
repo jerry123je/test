@@ -107,6 +107,9 @@ TriAquae所依赖的环境
 	.init		初始化TriAquae相关操作
 
 
+   .. image:: images/startservice_01.jpg
+
+
 .. note::
 	
 	安装程序会检测TriAquae安装的系统环境，如果有不满足要求，TriAquae会帮您自动安装这些pythone和django所需的环境，当然这是在您允许的情况下。

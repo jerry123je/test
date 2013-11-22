@@ -16,7 +16,6 @@ Start the service by simplely run below command
 启动服务
 ----------------------
 
-  .. image:: images/startservice_01.jpg
 		
 	
 查看状态
