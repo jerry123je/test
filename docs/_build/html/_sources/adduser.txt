@@ -24,7 +24,7 @@
 完成后,我们可以继续添加后续的信息
 
  
-  绑定远程用户
+绑定远程用户
 
   .. image:: images/add_user_002.png
    	     :scale: 80 %
@@ -35,7 +35,7 @@
 	我们可以根据权限的限制,给 TriAquae 分配不同的远程用户
 
 
-  设置用户属组
+设置用户属组
 
   .. image:: images/add_user_003.png
              :scale: 80 %
@@ -44,7 +44,7 @@
 
 	用户属组用于统一管理 TriAquae 用户
 
-  绑定用户可管理的客户机
+绑定用户可管理的客户机
 
   .. image:: images/add_user_004.png
              :scale: 80 %
