@@ -118,13 +118,6 @@ TriAquae所依赖的环境
 2.3.4. 配置TriAquae
 ---------------------------
 
-创建数据库
-
-::
-
-	mysql> create database TriAquae;
-	mysql> quit;
-
 配置数据库信息
 
 编辑当前目录下的tri_config.py配置文件，填写数据库连接信息。
@@ -156,7 +149,7 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 	
 	SMTP_server = 'smtp.company.com' #replace it to your company smtp server
 	Mail_username = 'tri_mailuser'
-	Mail_password = 'Motherfucker!23'
+	Mail_password = 'TriAquae!23'
 
 
 2.3.5. 初始化
