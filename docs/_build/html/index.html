@@ -246,33 +246,30 @@ python setup.py install         安装TriAquae到您指定的目录中</pre>
 </div>
 <div class="section" id="faq">
 <h2><a class="toc-backref" href="#id24">2.8. FAQ</a><a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">启动tri_service.py时报导入错误
-ImportError: libpython2.7.so.1.0: cannot open shared object file: No such file or directory</p>
+<div class="highlight-python"><pre>启动tri_service.py时报导入错误
+
+ImportError: libpython2.7.so.1.0: cannot open shared object file: No such file or directory</pre>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p>解决方法</p>
 <p class="last">升级为python2.7</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">登陆堡垒机连接远程服务器不显示连接信息，无任何输出</p>
+<div class="highlight-python"><pre>登陆堡垒机连接远程服务器不显示连接信息，无任何输出</pre>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p>解决方法</p>
 <p class="last">logs目录需要777权限</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">执行$ sudo python tri_service.py start
-django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: libmysqlclient_r.so.15: cannot open shared object file: No such file or directory</p>
+<div class="highlight-python"><pre>执行$ sudo python tri_service.py start
+
+django.core.exceptions.ImproperlyConfigured:
+
+Error loading MySQLdb module: libmysqlclient_r.so.15:
+
+cannot open shared object file: No such file or directory</pre>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p>解决方法</p>
 <p class="last">访问https://pypi.python.org/simple/MySQL-python/下载合适的MySQLdb版本进行编译安装</p>
 </div>
 </div>

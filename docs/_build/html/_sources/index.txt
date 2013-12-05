@@ -211,29 +211,35 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 2.8. FAQ
 --------------------------------
 
-.. note:: 
+:: 
         
         启动tri_service.py时报导入错误 
-        ImportError: libpython2.7.so.1.0: cannot open shared object file: No such file or directory
         
-.. hint:: 解决方法
+	ImportError: libpython2.7.so.1.0: cannot open shared object file: No such file or directory
+        
+.. hint::
 
         升级为python2.7
         
-.. note:: 
+:: 
         
         登陆堡垒机连接远程服务器不显示连接信息，无任何输出
 
-.. hint:: 解决方法
+.. hint:: 
 
         logs目录需要777权限
 
-.. note:: 
+:: 
 
         执行$ sudo python tri_service.py start
-        django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: libmysqlclient_r.so.15: cannot open shared object file: No such file or directory
+   
+	django.core.exceptions.ImproperlyConfigured: 
+	
+	Error loading MySQLdb module: libmysqlclient_r.so.15: 
+
+	cannot open shared object file: No such file or directory
         
-.. hint:: 解决方法
+.. hint:: 
 
         访问https://pypi.python.org/simple/MySQL-python/下载合适的MySQLdb版本进行编译安装
 
