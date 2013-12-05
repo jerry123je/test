@@ -65,9 +65,10 @@
 <li><a class="reference internal" href="#id8" id="id21">2.5. 初始化</a></li>
 <li><a class="reference internal" href="#id9" id="id22">2.6. 启动TriAquae</a></li>
 <li><a class="reference internal" href="#id10" id="id23">2.7. 登录TriAquae</a></li>
+<li><a class="reference internal" href="#faq" id="id24">2.8. FAQ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id11" id="id24">3. 配置</a></li>
+<li><a class="reference internal" href="#id11" id="id25">3. 配置</a></li>
 </ul>
 </div>
 <dl class="docutils">
@@ -102,15 +103,15 @@ TriAquae安装</dd>
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">Python</span>       <span class="o">==</span>&gt; 2.6
-python-pip  <span class="o">==</span>&gt; 1.1
-<span class="nv">Httpd</span>       <span class="o">==</span>&gt; 2.2
-<span class="nv">MySQL</span>     <span class="o">==</span>&gt; 5.0
-<span class="nv">SNMP</span>       <span class="o">==</span>&gt; 5.4
-<span class="nv">Django</span>     <span class="o">==</span>&gt; 1.5
-<span class="nv">Rrdtool</span>     <span class="o">==</span>&gt; 1.47
-<span class="nv">Shellinabox</span> <span class="o">==</span>&gt; 2.10
-<span class="nv">Paramiko</span>   <span class="o">==</span>&gt; 1.10.1
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">Python</span>       <span class="o">==</span>&gt; 2.75
+python-pip   <span class="o">==</span>&gt; 1.1
+<span class="nv">Httpd</span>        <span class="o">==</span>&gt; 2.2
+<span class="nv">MySQL</span>        <span class="o">==</span>&gt; 5.0
+<span class="nv">SNMP</span>         <span class="o">==</span>&gt; 5.4
+<span class="nv">Django</span>       <span class="o">==</span>&gt; 1.5
+<span class="nv">Rrdtool</span>      <span class="o">==</span>&gt; 1.47
+<span class="nv">Shellinabox</span>  <span class="o">==</span>&gt; 2.10
+<span class="nv">Paramiko</span>     <span class="o">==</span>&gt; 1.10.1
 sysstat
 MySQLdb
 django_admin_bootstrapped.admin.models
@@ -132,7 +133,10 @@ django_admin_bootstrapped.admin.models
 <h1><a class="toc-backref" href="#id16">2. 安装TriAquae</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id5">
 <h2><a class="toc-backref" href="#id17">2.1. 安装依赖环境</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre>yum install gcc gcc-c++ make sysstat -y
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>CentOS</p>
+<div class="highlight-bash"><div class="highlight"><pre>yum install gcc gcc-c++ make sysstat nc -y
 yum install python-devel -y
 yum install net-snmp net-snmp-utils net-snmp-devel -y
 yum install mysql mysql-server mysql-devel -y
@@ -140,9 +144,27 @@ yum install mysql mysql-server mysql-devel -y
 </pre></div>
 </div>
 <p>安装rrdtool</p>
-<div class="highlight-bash"><div class="highlight"><pre>yum install libart_lgpl libart_lgpl-devel -y
+<div class="last highlight-bash"><div class="highlight"><pre>yum install cairo-devel libxml2-devel pango-devel pango libpng-devel -y
+yum install freetype freetype-devel libart_lgpl libart_lgpl-devel intltool -y
 yum install rrdtool rrdtool-devel -y
 </pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Ubuntu</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install gcc make sysstat nc
+sudo apt-get install python-dev
+sudo apt-get install snmpd
+sudo apt-get install mysql-client mysql-server
+sudo apt-get install python-mysqldb
+sudo /etc/init.d/mysql start
+</pre></div>
+</div>
+<p>安装rrdtool</p>
+<div class="last highlight-bash"><div class="highlight"><pre>sudo apt-get install rrdtool
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="python-2-75">
@@ -158,9 +180,7 @@ python -V
 <div class="highlight-python"><pre>tar zxf TriAquae.tar.gz
 cd TriAquae/install
 python setup.py build --prefix= 指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。
-python setup.py install         安装TriAquae到您指定的目录中
-
-.init           初始化TriAquae相关操作</pre>
+python setup.py install         安装TriAquae到您指定的目录中</pre>
 </div>
 <img alt="_images/startservice_01.jpg" src="_images/startservice_01.jpg" />
 <div class="admonition note">
@@ -173,12 +193,9 @@ python setup.py install         安装TriAquae到您指定的目录中
 <p>配置数据库信息</p>
 <p>编辑当前目录下的tri_config.py配置文件，填写数据库连接信息。</p>
 <p>TriAquae初始化之前会将必要的信息写入到数据库中，必须在初始化之前配置好数据库和本机IP地址。</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#TriAquae database info</span>
-<span class="n">MySQL_Name</span> <span class="o">=</span> <span class="s">&#39;TriAquae&#39;</span>   <span class="c"># Don&#39;t change this database name</span>
-<span class="n">MySQL_Host</span> <span class="o">=</span> <span class="s">&#39;127.0.0.1&#39;</span>  <span class="c"># Your Mysql hostname</span>
-<span class="n">MySQL_Port</span> <span class="o">=</span> <span class="s">&#39;3306&#39;</span>       <span class="c"># Your Mysql port</span>
-<span class="n">MySQL_User</span> <span class="o">=</span> <span class="s">&#39;root&#39;</span>       <span class="c"># Your Mysql username</span>
-<span class="n">MySQL_Pass</span> <span class="o">=</span> <span class="s">&#39;123&#39;</span>        <span class="c"># Your Mysql password, &#39;&#39; means no password.</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">MySQL_Name</span> <span class="o">=</span> <span class="s">&#39;TriAquae&#39;</span>  <span class="c"># Don&#39;t change this database name</span>
+<span class="n">MySQL_User</span> <span class="o">=</span> <span class="s">&#39;root&#39;</span>      <span class="c"># Your Mysql username</span>
+<span class="n">MySQL_Pass</span> <span class="o">=</span> <span class="s">&#39;coral&#39;</span>     <span class="c"># Your Mysql password, &#39;&#39; means no password.</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -192,7 +209,7 @@ python setup.py install         安装TriAquae到您指定的目录中
 <p>配置报警接受邮件</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">SMTP_server</span> <span class="o">=</span> <span class="s">&#39;smtp.company.com&#39;</span> <span class="c">#replace it to your company smtp server</span>
 <span class="n">Mail_username</span> <span class="o">=</span> <span class="s">&#39;tri_mailuser&#39;</span>
-<span class="n">Mail_password</span> <span class="o">=</span> <span class="s">&#39;TriAquae!23&#39;</span>
+<span class="n">Mail_password</span> <span class="o">=</span> <span class="s">&#39;tri_mailpass&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -201,7 +218,10 @@ python setup.py install         安装TriAquae到您指定的目录中
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># python setup.py init</span>
 </pre></div>
 </div>
-<p>初始化操作会创建tri_connector用户，导入TriAquae数据库等操作</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">初始化操作会创建tri_connector用户，导入TriAquae数据库等操作</p>
+</div>
 </div>
 <div class="section" id="id9">
 <h2><a class="toc-backref" href="#id22">2.6. 启动TriAquae</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
@@ -224,9 +244,41 @@ python setup.py install         安装TriAquae到您指定的目录中
 <p class="last">注意关闭 iptables</p>
 </div>
 </div>
+<div class="section" id="faq">
+<h2><a class="toc-backref" href="#id24">2.8. FAQ</a><a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">启动tri_service.py时报导入错误
+ImportError: libpython2.7.so.1.0: cannot open shared object file: No such file or directory</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>解决方法</p>
+<p class="last">升级为python2.7</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">登陆堡垒机连接远程服务器不显示连接信息，无任何输出</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>解决方法</p>
+<p class="last">logs目录需要777权限</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">执行$ sudo python tri_service.py start
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: libmysqlclient_r.so.15: cannot open shared object file: No such file or directory</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>解决方法</p>
+<p class="last">访问https://pypi.python.org/simple/MySQL-python/下载合适的MySQLdb版本进行编译安装</p>
+</div>
+</div>
 </div>
 <div class="section" id="id11">
-<h1><a class="toc-backref" href="#id24">3. 配置</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id25">3. 配置</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">TriAquae 使用文档</a></li>
@@ -290,6 +342,7 @@ python setup.py install         安装TriAquae到您指定的目录中
 <li><a class="reference internal" href="#id8">2.5. 初始化</a></li>
 <li><a class="reference internal" href="#id9">2.6. 启动TriAquae</a></li>
 <li><a class="reference internal" href="#id10">2.7. 登录TriAquae</a></li>
+<li><a class="reference internal" href="#faq">2.8. FAQ</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id11">3. 配置</a><ul>

@@ -37,15 +37,15 @@ TriAquae是Python语言 + Django Web框架编写的开源的服务器运维管�
 .. code-block:: bash
    :linenos:
    
-   Python     	==> 2.6
-   python-pip  ==> 1.1
-   Httpd       ==> 2.2
-   MySQL     ==> 5.0
-   SNMP       ==> 5.4
-   Django     ==> 1.5
-   Rrdtool     ==> 1.47
-   Shellinabox ==> 2.10
-   Paramiko   ==> 1.10.1
+   Python       ==> 2.75
+   python-pip   ==> 1.1
+   Httpd        ==> 2.2
+   MySQL        ==> 5.0
+   SNMP         ==> 5.4
+   Django       ==> 1.5
+   Rrdtool      ==> 1.47
+   Shellinabox  ==> 2.10
+   Paramiko     ==> 1.10.1
    sysstat
    MySQLdb
    django_admin_bootstrapped.admin.models
@@ -69,21 +69,41 @@ TriAquae是Python语言 + Django Web框架编写的开源的服务器运维管�
 2.1. 安装依赖环境
 ---------------------------
 
-.. code-block:: bash 
+.. note:: CentOS
 
-	yum install gcc gcc-c++ make sysstat -y
-	yum install python-devel -y
-	yum install net-snmp net-snmp-utils net-snmp-devel -y
-	yum install mysql mysql-server mysql-devel -y
-	/etc/init.d/mysqld start
-	
-安装rrdtool
+        .. code-block:: bash 
 
-.. code-block:: bash
+                yum install gcc gcc-c++ make sysstat nc -y
+                yum install python-devel -y
+                yum install net-snmp net-snmp-utils net-snmp-devel -y
+                yum install mysql mysql-server mysql-devel -y
+                /etc/init.d/mysqld start
+        
+        安装rrdtool
 
-	yum install libart_lgpl libart_lgpl-devel -y
-	yum install rrdtool rrdtool-devel -y
+        .. code-block:: bash
 
+                yum install cairo-devel libxml2-devel pango-devel pango libpng-devel -y
+                yum install freetype freetype-devel libart_lgpl libart_lgpl-devel intltool -y
+                yum install rrdtool rrdtool-devel -y
+
+
+.. note:: Ubuntu
+
+        .. code-block:: bash
+
+                sudo apt-get install gcc make sysstat nc
+                sudo apt-get install python-dev
+                sudo apt-get install snmpd
+                sudo apt-get install mysql-client mysql-server
+                sudo apt-get install python-mysqldb
+                sudo /etc/init.d/mysql start
+
+        安装rrdtool
+        
+        .. code-block:: bash
+
+                sudo apt-get install rrdtool
 
 2.2. 升级 python 到2.75以上
 ------------------------------
@@ -105,8 +125,6 @@ TriAquae是Python语言 + Django Web框架编写的开源的服务器运维管�
 	cd TriAquae/install
 	python setup.py build --prefix=	指定TriAquae安装路径，如果不指定的话，默认安装路径为/usr/local/TriAquae。
 	python setup.py install		安装TriAquae到您指定的目录中
-	
-	.init		初始化TriAquae相关操作
 
 
 .. image:: images/startservice_01.jpg
@@ -128,12 +146,9 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 
 ::
 	
-   #TriAquae database info
-   MySQL_Name = 'TriAquae'   # Don't change this database name
-   MySQL_Host = '127.0.0.1'  # Your Mysql hostname
-   MySQL_Port = '3306'       # Your Mysql port
-   MySQL_User = 'root'       # Your Mysql username
-   MySQL_Pass = '123'        # Your Mysql password, '' means no password.
+	MySQL_Name = 'TriAquae'  # Don't change this database name
+	MySQL_User = 'root'	 # Your Mysql username
+	MySQL_Pass = 'coral'	 # Your Mysql password, '' means no password.
 
 .. note::
 	
@@ -153,7 +168,7 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 	
 	SMTP_server = 'smtp.company.com' #replace it to your company smtp server
 	Mail_username = 'tri_mailuser'
-	Mail_password = 'TriAquae!23'
+	Mail_password = 'tri_mailpass'
 
 
 2.5. 初始化
@@ -163,7 +178,9 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 
 	# python setup.py init
 
-初始化操作会创建tri_connector用户，导入TriAquae数据库等操作
+.. hint:: 
+
+	初始化操作会创建tri_connector用户，导入TriAquae数据库等操作
 
 2.6. 启动TriAquae
 ---------------------------
@@ -190,6 +207,35 @@ TriAquae初始化之前会将必要的信息写入到数据库中，必须在初
 .. tip::
 	
 	注意关闭 iptables
+
+2.8. FAQ
+--------------------------------
+
+.. note:: 
+        
+        启动tri_service.py时报导入错误 
+        ImportError: libpython2.7.so.1.0: cannot open shared object file: No such file or directory
+        
+.. hint:: 解决方法
+
+        升级为python2.7
+        
+.. note:: 
+        
+        登陆堡垒机连接远程服务器不显示连接信息，无任何输出
+
+.. hint:: 解决方法
+
+        logs目录需要777权限
+
+.. note:: 
+
+        执行$ sudo python tri_service.py start
+        django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: libmysqlclient_r.so.15: cannot open shared object file: No such file or directory
+        
+.. hint:: 解决方法
+
+        访问https://pypi.python.org/simple/MySQL-python/下载合适的MySQLdb版本进行编译安装
 
 
 3. 配置
