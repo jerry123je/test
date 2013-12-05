@@ -15,6 +15,17 @@
 
 	这里,如果您的客户机操作系统为CentOS, 推荐使用 SNMP V3, Ubuntu 可以使用 V2
 
+  .. hint::
+
+	如何创建 SNMP v3 用户:
+
+	service snmpd stop
+
+	chmod 777 net-snmp-config
+	
+	net-snmp-config --create-snmpv3-user -ro -a mypass -A MD5 myname
+
+	#注意上面一句，-a是密码，而用户名跟在最后面，-A是密码加密方式，
 
 配置SNMP 监控
 ----------------------
